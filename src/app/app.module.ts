@@ -19,7 +19,6 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireModule.initializeApp(environment.firebaseUsers),
     AngularFireDatabaseModule 
 
   ],
