@@ -1,3 +1,8 @@
+<form class="form-inline">
+    <input name="searchInput" class="form-control"  placeholder="Search by name or type of contact" #searchInput="ngModel"  [(ngModel)]="searchText" style="width: 80%;" >
+    <button class="btn btn-outline-primary"  (click)="searchText=''">x</button>
+</form>
+
 <table class="table table-sm">
 	<thead>
 	    <th>First Name</th>
@@ -8,7 +13,7 @@
 	    <th></th>
   	</thead>
   	<ng-container *ngFor="let contact of contactsArray">
-    	<tr class="table-dark">
+    	<tr class="table-dark" *ngIf ="filterCondition(contact)">
 	    	<td>{{contact.firstName}}</td>
 		    <td>{{contact.lastName}}</td>
 		    <td>{{contact.phoneNumber}}</td>

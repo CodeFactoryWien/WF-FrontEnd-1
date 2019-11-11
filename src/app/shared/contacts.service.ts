@@ -10,6 +10,7 @@ export class ContactsService {
 	  constructor(private firebase: AngularFireDatabase) { }
 	  contactsList: AngularFireList<any>;
 
+    // defines form for contact book entries
 	  form = new FormGroup({
       	$key: new FormControl(null),
      	  firstName: new FormControl('', Validators.required),
@@ -19,25 +20,29 @@ export class ContactsService {
      	  type: new FormControl('', Validators.required)
     });
 
+    // retrieves database entries/changes
     getContacts(){
         this.contactsList = this.firebase.list('contacts');
         return this.contactsList.snapshotChanges();
     }
 
+    // adds a new entry to the database
     insertContact(contact){
         this.contactsList.push({
             firstName: contact.firstName,
-            lastName:  contact.lastName,
+            lastName: contact.lastName,
             phoneNumber: contact.phoneNumber,
             email: contact.email,
             type: contact.type
         });
     }
 
+    // fills out the form fields with data from a database entry
     populateForm(contact){
     	  this.form.setValue(contact);
   	}
 
+    // updates an existing database entry
   	updateCustomer(contact){
     	  this.contactsList.update(contact.$key,{
        	  	firstName: contact.firstName,
@@ -48,6 +53,7 @@ export class ContactsService {
     	  });
   	}
 
+    // removes a datase entry
   	deleteContact($key: string){
       	this.contactsList.remove($key);
   	}
