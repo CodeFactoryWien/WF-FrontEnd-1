@@ -7,11 +7,21 @@ import { ContactsService } from "../shared/contacts.service";
   	styleUrls: ['./contacts-list.component.scss']
 })
 export class ContactsListComponent implements OnInit {
+	contactsArray =[];
 
 	constructor(private contactsService: ContactsService) { }
 
 	ngOnInit() {
-		this.contactsService.getContacts();
+		this.contactsService.getContacts().subscribe(
+            (list) => {
+                this.contactsArray = list.map( (item) => {
+                    return {
+                        $key : item.key,
+                        ...item.payload.val()
+                    }
+                })
+            }
+        );
   	}
 
 }
