@@ -33,7 +33,6 @@ import { FooterComponent } from './footer/footer.component';
     AppRoutingModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireModule.initializeApp(environment.firebaseUsers),
     AngularFireDatabaseModule 
 
   ],
