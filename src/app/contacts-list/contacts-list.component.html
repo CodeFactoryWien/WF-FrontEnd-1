@@ -15,9 +15,10 @@
 		    <td>{{contact.email}}</td>
 		    <td>{{contact.type}}</td>
 		    <td>
-	      		<button class="btn btn-info">Edit</button>
-	        	<button class="btn btn-danger">Delete</button>
+	      		<button class="btn btn-info" (click)="contactsService.populateForm(contact)">Edit</button>
+	        	<button class="btn btn-danger" (click)="onDelete(contact.$key)">Delete</button>
       		</td>
     	</tr>
   	</ng-container>
 </table>
+<div class="alert alert-danger" *ngIf="showDeletedMessage">Deleted successfully</div>
