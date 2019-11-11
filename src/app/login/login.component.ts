@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase } from 'angularfire2/database';
+
 
 @Component({
   selector: 'app-login',
@@ -7,8 +7,22 @@ import { AngularFireDatabase } from 'angularfire2/database';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  
+  user : string;
+  password : string;
+  someArray: {key: string, value: string}[] = [
+    {key: 'Sandra', value: 'password'},
+    {key: 'Tamas', value: 'wordpass'}
+  ];
+
   ngOnInit() {
   }
+  
+  login() {
+    this.user = document.getElementById("user").innerText;
+    this.password = document.getElementById("pass").innerText;
+    console.log(this.user)
+    console.log(this.password)
+  }
+
 
 }
