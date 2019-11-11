@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { ContactsListComponent } from './contacts-list/contacts-list.component';
 import { ContactsService } from "./shared/contacts.service";
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ContactsService } from "./shared/contacts.service";
     HeaderComponent,
     LoginComponent,
     ContactsComponent,
-    ContactsListComponent
+    ContactsListComponent,
+    FooterComponent
 
   ],
   imports: [
