@@ -10,6 +10,7 @@ import { ContactsService } from "../shared/contacts.service";
 export class ContactsListComponent implements OnInit {
     contactsArray =[];
 	  showDeletedMessage : boolean;
+    searchText:string = "";
 
 	  constructor(private contactsService: ContactsService) { }
 
@@ -35,4 +36,11 @@ export class ContactsListComponent implements OnInit {
        		  setTimeout(()=> this.showDeletedMessage=false , 3000)
      	}
    	}
+
+    // search function for name (both first and last name) and type
+    filterCondition(contact){
+        return (contact.firstName.toLowerCase().indexOf(this.searchText.toLowerCase()) 
+                && contact.lastName.toLowerCase().indexOf(this.searchText.toLowerCase()) 
+                && contact.type.toLowerCase().indexOf(this.searchText.toLowerCase())) != -1 ;
+    }
 }
