@@ -27,11 +27,29 @@ export class ContactsService {
     insertContact(contact){
         this.contactsList.push({
             firstName: contact.firstName,
-            lastName: contact.lastName,
+            lastName:  contact.lastName,
             phoneNumber: contact.phoneNumber,
             email: contact.email,
             type: contact.type
         });
     }
+
+    populateForm(contact){
+    	this.form.setValue(contact);
+  	}
+
+  	updateCustomer(contact){
+    	this.contactsList.update(contact.$key,{
+       		firstName: contact.firstName,
+       		lastName: contact.lastName,
+       		phoneNumber: contact.phoneNumber,
+        	email: contact.email,
+        	type: contact.type
+    	});
+  	}
+
+  	deleteContact($key: string){
+    	this.contactsList.remove($key);
+  	}
 
 }
