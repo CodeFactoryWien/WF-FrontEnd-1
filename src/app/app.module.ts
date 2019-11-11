@@ -31,7 +31,6 @@ import { ContactsService } from "./shared/contacts.service";
     AppRoutingModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireModule.initializeApp(environment.firebaseUsers),
     AngularFireDatabaseModule 
 
   ],
