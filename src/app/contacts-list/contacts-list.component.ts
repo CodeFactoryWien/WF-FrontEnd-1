@@ -6,12 +6,14 @@ import { ContactsService } from "../shared/contacts.service";
   	templateUrl: './contacts-list.component.html',
   	styleUrls: ['./contacts-list.component.scss']
 })
+
 export class ContactsListComponent implements OnInit {
     contactsArray =[];
 	  showDeletedMessage : boolean;
 
 	  constructor(private contactsService: ContactsService) { }
 
+    // keeps the list updated
 	  ngOnInit() {
 		    this.contactsService.getContacts().subscribe(
             (list) => {
@@ -25,6 +27,7 @@ export class ContactsListComponent implements OnInit {
         );
   	}
 
+    // deletes existing database records after user confirmation
    	onDelete($key){
     	  if(confirm("Are you sure you want to delete this record?")){
           	this.contactsService.deleteContact($key);
