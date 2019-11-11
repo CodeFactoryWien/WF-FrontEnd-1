@@ -18,25 +18,23 @@ import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-    HeaderComponent,
-    LoginComponent,
-    ContactsComponent,
-    ContactsListComponent,
-    FooterComponent
-
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule 
-
-  ],
-  providers: [ContactsService],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        NavbarComponent,
+        HeaderComponent,
+        LoginComponent,
+        ContactsComponent,
+        ContactsListComponent,
+        FooterComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireDatabaseModule 
+    ],
+    providers: [ContactsService],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
