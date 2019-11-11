@@ -5,15 +5,14 @@
 export const environment = {
   production: false,
   firebaseConfig : {
-  apiKey: "AIzaSyDZ1jFFSSu3sg1bFrJNV_Dubh3liAg9Xvg",
-  authDomain: "contacts-2ab5b.firebaseapp.com",
-  databaseURL: "https://contacts-2ab5b.firebaseio.com",
-  projectId: "contacts-2ab5b",
-  storageBucket: "contacts-2ab5b.appspot.com",
-  messagingSenderId: "907486380444",
-  appId: "1:907486380444:web:59f41db94af39b1f640859",
-  measurementId: "G-2SW3KTPZD5"
-}
+    apiKey: "AIzaSyCGt4x-Hsx9QdincmZdl4-JsdNUzVnRdXY",
+    authDomain: "contacts-e5ef7.firebaseapp.com",
+    databaseURL: "https://contacts-e5ef7.firebaseio.com",
+    projectId: "contacts-e5ef7",
+    storageBucket: "contacts-e5ef7.appspot.com",
+    messagingSenderId: "494211130030",
+    appId: "1:494211130030:web:2e966eac6e0ab4c412433f"
+  }
 };
 
 /*

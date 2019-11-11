@@ -1,0 +1,10 @@
+#main-content{
+	min-height: 600px;
+	padding-top: 10rem;
+    padding-bottom: calc(10rem - 72px);
+    background: linear-gradient(to bottom, rgba(152, 204, 211, 0.2) 0%, rgba(152, 204, 211, 0.8) 100%), url("/assets/img/background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
