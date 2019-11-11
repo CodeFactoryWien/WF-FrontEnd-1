@@ -27,7 +27,11 @@ export class ContactsComponent implements OnInit {
        			this.submitted = false;
        			this.contactsService.form.reset();
         	} else {
-                 //update
+               	this.contactsService.updateCustomer(this.contactsService.form.value);
+      			this.showSuccessMessage = true;
+     			setTimeout(()=> this.showSuccessMessage=false ,3000);
+     			this.submitted = false;
+      			this.contactsService.form.reset();
         	}
 		}
  	}
