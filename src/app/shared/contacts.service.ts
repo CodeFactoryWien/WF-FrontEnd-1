@@ -17,7 +17,8 @@ export class ContactsService {
      	  lastName: new FormControl('', Validators.required),
      	  phoneNumber: new FormControl('', [Validators.required, Validators.minLength(8)]),
      	  email: new FormControl('', Validators.email),
-     	  type: new FormControl('', Validators.required)
+     	  type: new FormControl('', Validators.required),
+        archive: new FormControl(null)
     });
 
     // retrieves database entries/changes
@@ -33,7 +34,8 @@ export class ContactsService {
             lastName: contact.lastName,
             phoneNumber: contact.phoneNumber,
             email: contact.email,
-            type: contact.type
+            type: contact.type,
+            archive: false
         });
     }
 
@@ -57,5 +59,17 @@ export class ContactsService {
   	deleteContact($key: string){
       	this.contactsList.remove($key);
   	}
+
+    archiveContact(contact){
+        this.contactsList.update(contact.$key,{
+            archive: true
+        })
+    }
+
+    restoreContact(contact){
+        this.contactsList.update(contact.$key,{
+            archive: false
+        })
+    }
 
 }
