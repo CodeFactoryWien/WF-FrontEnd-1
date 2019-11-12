@@ -1,14 +1,17 @@
 main{
-	width: 85%;
-	margin: auto;	
-}
-#collapseForm{
-	width: 80%;
+	width: 70%;
 	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;	
+}
+#collapseExample{
+
+	
 }
 #list-container{
-	width: 80%;
-	margin: auto;
+
+	
 	min-height:500px; 
 
 	border: 1px solid rgba(152, 204, 211, 0.5);
