@@ -37,10 +37,10 @@ export class LoginComponent implements OnInit {
       }
     }
     if (localStorage.getItem("login") == "true") {
-      console.log("You are logged in");
+      document.getElementById("message").innerText = "You are logged in";
     }
     else {
-      console.log("Wrong user name or password")
+      document.getElementById("message").innerText = "Wrong password";
     }
   }
     

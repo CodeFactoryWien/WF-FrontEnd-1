@@ -1,7 +1,27 @@
 #form-container{
-	width: 400px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	width: 200px;
 	margin: auto;
 	border: 1px solid #3b5053;
+
+	#user::placeholder {
+		text-align: center;
+	}
+
+	#pass::placeholder {
+		text-align: center;
+	}
+
+	#message {
+		height: 1.5em;
+		font-weight: bold;
+		text-align: center;
+	}
+
+
 }
 #logo{
 	width: 50px;
