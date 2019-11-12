@@ -39,7 +39,17 @@ import { ArchiveComponent } from './archive/archive.component';
         AngularFireModule.initializeApp(environment.firebaseConfig),
         AngularFireDatabaseModule 
     ],
-    providers: [ContactsService],
+    providers: [
+        ContactsService,
+        { provide: 'CanAlwaysActivateGuard',
+            useValue: () => {
+                if(localStorage.getItem("login") == "true"){
+                    return true;
+                }
+                return false;
+            }
+        }
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
