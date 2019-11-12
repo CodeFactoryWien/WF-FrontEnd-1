@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
     
 
   constructor(private router: Router) {}
-
+    
   ngOnInit() {
   }
   
@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
     for (let user of this.users) {
         if (this.userInput.value == user.key && this.passwordInput.value == user.value) {
             localStorage.setItem("login", "true"); 
+            localStorage.setItem("user", user.key); 
             document.getElementById("log").innerHTML = `
             <a id="login-button" routerLink="/" class="nav-link js-scroll-trigger" href="">Logout</a>`
             document.getElementById("login-button").addEventListener("click", function() {
@@ -54,12 +55,4 @@ export class LoginComponent implements OnInit {
     }
   }
     
-  onLogOut() {
-    /* This sets the login status to false and console logs the logout message*/
-    localStorage.setItem("login", "false");
-    console.log("You are logged out");
-    this.router.navigate(['/']);
-  }
-
-
 }
