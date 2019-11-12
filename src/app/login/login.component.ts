@@ -45,9 +45,14 @@ export class LoginComponent implements OnInit {
       /* At successful login hide the Submit button and displays the continue button */
       document.getElementById("message").innerText = "You are logged in";
       document.getElementById("butt").hidden = true; // the button disappears after login
+<<<<<<< HEAD
       (<HTMLButtonElement>document.getElementById("routerButton")).style.display = "block";
       
 
+=======
+      document.getElementById("routerButton").hidden = false;
+      
+>>>>>>> 48c137f8405b2ff433c7d977a70b01cf973ddf5f
     
     }
     else {
