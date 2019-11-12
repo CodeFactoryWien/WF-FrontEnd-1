@@ -7,30 +7,27 @@ import {ArchiveComponent} from './archive/archive.component';
 
 const routes: Routes = [
 {
-
-        path: "", component: LandingComponent
-
+	path: "", 
+    component: LandingComponent
 },
 {
-
-        path: "contacts", component: ContactsComponent
-
+	path: "contacts", 
+	component: ContactsComponent,
+	canActivate: ['CanAlwaysActivateGuard']
 },
 {
-
-        path: "archive", 
-        component: ArchiveComponent,
-        canActivate: ['CanAlwaysActivateGuard']
-        
+	path: "archive", 
+    component: ArchiveComponent,
+    canActivate: ['CanAlwaysActivateGuard']
 },
 {
-
-        path: "login", component: LoginComponent
+	path: "login", 
+	component: LoginComponent
 
 }];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forRoot(routes)],
+	exports: [RouterModule]
 })
 export class AppRoutingModule { }
