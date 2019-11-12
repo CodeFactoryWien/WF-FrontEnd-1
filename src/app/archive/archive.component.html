@@ -1,0 +1,33 @@
+<div id="content">
+  <form class="form-inline">
+    <input name="searchInput" class="form-control" placeholder="Search by name or type of contact" #searchInput="ngModel" [(ngModel)]="searchText" style="width: 80%;">
+    <button class="btn btn-outline-primary" (click)="searchText=''">x</button>
+  </form>
+  <div id="content-table">
+    <table class="table table-sm">
+      <thead>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Type</th>
+        <th></th>
+      </thead>
+      <ng-container *ngFor="let contact of contactsArray">
+        <tr *ngIf="filterCondition(contact) && contact.archive==true">
+          <td>{{contact.firstName}}</td>
+          <td>{{contact.lastName}}</td>
+          <td>{{contact.phoneNumber}}</td>
+          <td>{{contact.email}}</td>
+          <td>{{contact.type}}</td>
+          <td>
+            <button class="btn btn-info" (click)="contactsService.restoreContact(contact)">Restore</button>
+            <button class="btn btn-danger" (click)="onDelete(contact.$key)">Delete</button>
+          </td>
+        </tr>
+      </ng-container>
+    </table>
+    <div>
+    </div>
+    <div class="alert alert-danger" *ngIf="showDeletedMessage">Deleted successfully</div>
+  </div>

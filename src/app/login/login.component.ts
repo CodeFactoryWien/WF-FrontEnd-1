@@ -1,7 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -25,7 +24,7 @@ export class LoginComponent implements OnInit {
   ];
     
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
   }
@@ -37,26 +36,21 @@ export class LoginComponent implements OnInit {
     this.userInput = (<HTMLInputElement>document.getElementById("user"));
     this.passwordInput = (<HTMLInputElement>document.getElementById("pass"));
     for (let user of this.users) {
-      if (this.userInput.value == user.key && this.passwordInput.value == user.value) {
-      localStorage.setItem("login", "true");        
-      }
-    }
-    if (localStorage.getItem("login") == "true") {
-      /* At successful login hide the Submit button and displays the continue button */
-      document.getElementById("message").innerText = "You are logged in";
-      document.getElementById("butt").hidden = true; // the button disappears after login
-      (<HTMLButtonElement>document.getElementById("routerButton")).style.display = "block";
-      
-    }
-    else {
-      document.getElementById("message").innerText = "Wrong password";
+        if (this.userInput.value == user.key && this.passwordInput.value == user.value) {
+            localStorage.setItem("login", "true"); 
+            this.router.navigate(['contacts']);       
+        }
+        else {
+            document.getElementById("message").innerText = "Wrong password or username";
+        }
     }
   }
     
   onLogOut() {
     /* This sets the login status to false and console logs the logout message*/
     localStorage.setItem("login", "false");
-    console.log("You are logged out") 
+    console.log("You are logged out");
+    this.router.navigate(['/']);
   }
 
 

@@ -14,7 +14,7 @@
 	    <th></th>
   	</thead>
   	<ng-container *ngFor="let contact of contactsArray">
-    	<tr *ngIf ="filterCondition(contact)">
+    	<tr *ngIf ="filterCondition(contact) && contact.archive==false">
 	    	<td>{{contact.firstName}}</td>
 		    <td>{{contact.lastName}}</td>
 		    <td>{{contact.phoneNumber}}</td>
@@ -22,11 +22,13 @@
 		    <td>{{contact.type}}</td>
 		    <td>
 	      		<button class="btn btn-info" (click)="contactsService.populateForm(contact)">Edit</button>
+	      		<button class="btn btn-info" (click)="onArchive(contact)">Archive</button>
 	        	<button class="btn btn-danger" (click)="onDelete(contact.$key)">Delete</button>
       		</td>
     	</tr>
   	</ng-container>
 </table>
 <div class="alert alert-danger" *ngIf="showDeletedMessage">Deleted successfully</div>
+<div class="alert alert-danger" *ngIf="showArchivedMessage">Archived successfully</div>
 
 </div>
