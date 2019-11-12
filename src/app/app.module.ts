@@ -46,12 +46,14 @@ import { ArchiveComponent } from './archive/archive.component';
                 if(localStorage.getItem("login") == "true"){
                     return true;
                 }
+                alert("Please login first to access this page!");
                 return false;
             }
         },
         { provide: 'CanNeverActivateGuard',
             useValue: () => {
                 if(localStorage.getItem("login") == "true"){
+                    alert("You are already logged in!");
                     return false;
                 }
                 return true;
