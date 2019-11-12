@@ -1,10 +1,13 @@
-<div id="content">
-  <div id="form-container">
-  	<img id="logo" src="./assets/img/logo2.png" alt="">
-    <input id="user" type="text" placeholder="User Name"><br>
-    <input id="pass" type="password" placeholder="Password">
-    <div id="message"></div>
-    <button id="butt" (click)="onSubmit($event)">Submit</button>
-    <button id="routerButton" routerLink="/contacts">click here to continue</button>
+<div class="container">
+  <div class="row">
+    <div id="form-container" class="col-xs-8 col-sm-6 col-md-4 col-lg-3 mx-auto">
+      <img id="logo" src="./assets/img/logo2.png" alt="">
+      <input id="user" class="form-control" type="text" placeholder="User Name"><br>
+      <input id="pass" class="form-control" type="password" placeholder="Password">
+      <div id="message"></div>
+      <button id="butt" class="btn btn-md btn-block  text-uppercase" (click)="onSubmit($event)">Sign in</button>
+      <button id="routerButton" routerLink="/contacts">click here to continue</button>
+      <p>Forget your password?</p>
+    </div>
   </div>
 </div>

@@ -1,7 +1,7 @@
 <div id="content">
 	<form class="form-inline">
     <input name="searchInput" class="form-control"  placeholder="Search by name or type of contact" #searchInput="ngModel"  [(ngModel)]="searchText" style="width: 80%;" >
-    <button class="btn btn-outline-primary"  (click)="searchText=''">x</button>
+    <button class="btn" (click)="searchText=''"><img src="./assets/img/search.png" alt=""></button>
 </form>
 
 <table class="table table-sm">

@@ -1,23 +1,10 @@
-#form-container{
-	text-align: center;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items : center;
-	width: 90%;
-	height:450px;
-	margin: auto;
+#form-container{	
 	border: 1px solid rgba(152, 204, 211, 0.5);
-	border-radius: 5px;
+	border-radius: 10px;
 	background-color: rgb(238,246,248);
+	text-align: center;
 
-	#user::placeholder {
-		text-align: center;
-	}
-
-	#pass::placeholder {
-		text-align: center;
-	}
+	
 
 	#message {
 		height: 1.5em;
@@ -25,20 +12,29 @@
 		text-align: center;
 	}
 
-	#routerButton {
+	#routerButton { //why do we still need this?
 		display: none;
 	}
-
 
 }
 #logo{
 	width: 50px;
-	margin-bottom: 30px;
-
+	height: auto;
+	display: block;
+	margin: 50px auto;
+}
+button{
+	background-color: #364e68;
+	color: white;
+	margin-bottom: 70px; 
+	border: none;
 }
 
-#content{
-	margin: auto;
-	width: 400px;
-	min-height:450px; 
+button:hover{ //overwrite
+	color: white;
 }
+
+p:hover{
+		cursor: pointer;
+		text-decoration: underline;
+	}
