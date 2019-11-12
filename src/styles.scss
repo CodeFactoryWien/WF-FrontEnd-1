@@ -1,11 +1,20 @@
-body{
-	min-height: 100vh; //viewport height
+html {
+  height: 100%;
 }
-.table{
-	min-height:50px; 
-	border: 1px solid rgba(152, 204, 211, 0.3);
-	background-color: rgb(235,240,246);
-	//border-radius: 10px;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+body {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.table {
+  min-height: 50px;
+  border: 1px solid rgba(152, 204, 211, 0.3);
+  background-color: rgb(235, 240, 246);
+  //border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
