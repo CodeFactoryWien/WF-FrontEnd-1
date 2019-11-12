@@ -11,10 +11,14 @@ export class LoginComponent implements OnInit {
   passwordInput : any;
   user : any;
   button : any;
+
+  /* User names and passwords */
   users = [
     {key: 'Sandra', value: 'password'},
-    {key: 'Tamas', value: 'wordpass'}    
+    {key: 'Tamas', value: 'wordpass'},
+    {key: 'Ece', value: 'boss'},
   ];
+    
 
   constructor() {}
 
@@ -22,8 +26,28 @@ export class LoginComponent implements OnInit {
   }
   
   onSubmit(e) {
-    console.log(this.users)
+    /* This sets the login status to true in case the user name and password match and console logs the login message
+    or the wrong password message*/
+    localStorage.setItem("login", "false");
+    this.userInput = (<HTMLInputElement>document.getElementById("user"));
+    this.passwordInput = (<HTMLInputElement>document.getElementById("pass"));
+    for (let user of this.users) {
+      if (this.userInput.value == user.key && this.passwordInput.value == user.value) {
+      localStorage.setItem("login", "true");        
+      }
+    }
+    if (localStorage.getItem("login") == "true") {
+      console.log("You are logged in");
+    }
+    else {
+      console.log("Wrong user name or password")
+    }
+  }
     
+  onLogOut() {
+    /* This sets the login status to false and console logs the logout message*/
+    localStorage.setItem("login", "false");
+    console.log("You are logged out") 
   }
 
 
