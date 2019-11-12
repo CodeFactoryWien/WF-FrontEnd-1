@@ -48,6 +48,14 @@ import { ArchiveComponent } from './archive/archive.component';
                 }
                 return false;
             }
+        },
+        { provide: 'CanNeverActivateGuard',
+            useValue: () => {
+                if(localStorage.getItem("login") == "true"){
+                    return false;
+                }
+                return true;
+            }
         }
     ],
     bootstrap: [AppComponent]
