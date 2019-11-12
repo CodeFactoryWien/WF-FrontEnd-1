@@ -38,6 +38,14 @@ export class LoginComponent implements OnInit {
     for (let user of this.users) {
         if (this.userInput.value == user.key && this.passwordInput.value == user.value) {
             localStorage.setItem("login", "true"); 
+            document.getElementById("log").innerHTML = `
+            <a id="login-button" routerLink="/" class="nav-link js-scroll-trigger" href="">Logout</a>`
+            document.getElementById("login-button").addEventListener("click", function() {
+              localStorage.setItem("login", "false");
+              console.log("in");
+              document.getElementById("log").innerHTML = `<a id="login-button" routerLink="/login" 
+                                            class="nav-link js-scroll-trigger" href="">Login</a>`
+          })
             this.router.navigate(['contacts']);       
         }
         else {

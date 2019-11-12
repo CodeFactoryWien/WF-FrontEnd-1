@@ -12,8 +12,8 @@ export class NavbarComponent implements OnInit {
 
     ngOnInit() {
         if (localStorage.getItem("login") == "true") {
-            document.getElementById("log").innerHTML = `<a id="login-button" routerLink="/" class="nav-link 
-                                                          js-scroll-trigger" href="">Logout</a>`
+            document.getElementById("log").innerHTML = `
+            <a id="login-button" routerLink="/" class="nav-link js-scroll-trigger" href="">Logout</a>`
             document.getElementById("login-button").addEventListener("click", function() {
                 localStorage.setItem("login", "false");
                 console.log("in");
