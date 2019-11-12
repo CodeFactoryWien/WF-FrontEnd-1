@@ -1,4 +1,6 @@
+
 import { Component, OnInit } from '@angular/core';
+
 
 
 @Component({
@@ -7,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+
+  
   userInput : any;
   passwordInput : any;
   user : any;
@@ -38,6 +42,9 @@ export class LoginComponent implements OnInit {
     }
     if (localStorage.getItem("login") == "true") {
       document.getElementById("message").innerText = "You are logged in";
+      document.getElementById("butt").hidden = true; // the button disappears after login
+      document.getElementById("routerButton").hidden = false;
+    
     }
     else {
       document.getElementById("message").innerText = "Wrong password";
