@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   passwordInput : any;
   user : any;
   button : any;
+  button2: any;
 
   /* User names and passwords */
   users = [
@@ -41,9 +42,12 @@ export class LoginComponent implements OnInit {
       }
     }
     if (localStorage.getItem("login") == "true") {
+      /* At successful login hide the Submit button and displays the continue button */
       document.getElementById("message").innerText = "You are logged in";
       document.getElementById("butt").hidden = true; // the button disappears after login
-      document.getElementById("routerButton").hidden = false;
+      (<HTMLButtonElement>document.getElementById("routerButton")).style.display = "block";
+      
+
     
     }
     else {
