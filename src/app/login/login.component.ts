@@ -44,6 +44,7 @@ export class LoginComponent implements OnInit {
       document.getElementById("message").innerText = "You are logged in";
       document.getElementById("butt").hidden = true; // the button disappears after login
       document.getElementById("routerButton").hidden = false;
+      
     
     }
     else {
