@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {LoginComponent} from './login/login.component';
 import {ContactsComponent} from './contacts/contacts.component';
 import {LandingComponent} from './landing/landing.component';
+import {ArchiveComponent} from './archive/archive.component';
 
 const routes: Routes = [
 {
@@ -13,6 +14,11 @@ const routes: Routes = [
 {
 
         path: "contacts", component: ContactsComponent
+
+},
+{
+
+        path: "archive", component: ArchiveComponent
 
 },
 {

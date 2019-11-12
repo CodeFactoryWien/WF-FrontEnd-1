@@ -16,6 +16,7 @@ import { ContactsListComponent } from './contacts-list/contacts-list.component';
 import { ContactsService } from "./shared/contacts.service";
 import { FooterComponent } from './footer/footer.component';
 import { LandingComponent } from './landing/landing.component';
+import { ArchiveComponent } from './archive/archive.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { LandingComponent } from './landing/landing.component';
         ContactsComponent,
         ContactsListComponent,
         FooterComponent,
-        LandingComponent
+        LandingComponent,
+        ArchiveComponent
     ],
     imports: [
         BrowserModule,

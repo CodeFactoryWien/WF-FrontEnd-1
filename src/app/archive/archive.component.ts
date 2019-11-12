@@ -2,18 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { ContactsService } from "../shared/contacts.service";
 
 @Component({
-    selector: 'app-contacts-list',
-  	templateUrl: './contacts-list.component.html',
-  	styleUrls: ['./contacts-list.component.scss']
+  selector: 'app-archive',
+  templateUrl: './archive.component.html',
+  styleUrls: ['./archive.component.scss']
 })
-
-export class ContactsListComponent implements OnInit {
-    contactsArray =[];
-	  showDeletedMessage : boolean;
-    showArchivedMessage : boolean;
+export class ArchiveComponent implements OnInit {
+	contactsArray =[];
+	showDeletedMessage : boolean;
     searchText:string = "";
 
-	  constructor(private contactsService: ContactsService) { }
+    constructor(private contactsService: ContactsService) { }
 
     // keeps the list updated
 	  ngOnInit() {
@@ -44,12 +42,4 @@ export class ContactsListComponent implements OnInit {
                 && contact.lastName.toLowerCase().indexOf(this.searchText.toLowerCase()) 
                 && contact.type.toLowerCase().indexOf(this.searchText.toLowerCase())) != -1 ;
     }
-
-    onArchive(contact){
-        if(confirm("Are you sure you want to archive this record?")){
-            this.contactsService.archiveContact(contact);
-            this.showArchivedMessage = true;
-            setTimeout(()=> this.showArchivedMessage=false , 3000)
-       }
-     }
 }
