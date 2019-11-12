@@ -21,6 +21,10 @@
 		text-align: center;
 	}
 
+	#routerButton {
+		display: none;
+	}
+
 
 }
 #logo{
@@ -30,4 +34,8 @@
 }
 label{
 	margin-bottom: 10px;
+}
+#content{
+
+	min-height:450px; 
 }
