@@ -1,0 +1,22 @@
+footer {
+    display: flex;
+    height: 4em;
+    width: 100%;
+    background-color: #F0F8F9;
+    color: black;
+    justify-content: space-between;
+
+    #credits {
+        padding: 1em;
+        font-style: italic;
+        font-size: 1.2em;
+    }
+
+    #cf {
+        padding-right:1em;
+        margin-top:0.2em;
+        font-weight: bold;
+        font-size: 2em;
+
+    }
+}
