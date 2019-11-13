@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     	for (let user of this.users) {
         	if (userInput == user.key && passwordInput == user.value) {
             	this.loginService.userLogin(user);
-                break;       
+                break;   
         	}
         	else {
                 $("#message").html("Wrong password or username");

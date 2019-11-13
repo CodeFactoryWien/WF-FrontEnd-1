@@ -1,11 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
-enum loginState {
-	login = 1,
-	logout,
-}
-
 @Injectable({
 	providedIn: 'root'
 })
