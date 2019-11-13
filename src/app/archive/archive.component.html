@@ -2,7 +2,7 @@
  <div class="row table mx-auto table-xs col-lg-8 col-md-10 col-sm-12">
   <form class="form-inline col">
     <input name="searchInput" class="form-control" placeholder="Search by name or type of contact" #searchInput="ngModel" [(ngModel)]="searchText" style="width: 80%;">
-    <button class="btn" (click)="searchText=''"><img src="./assets/img/search.png" alt=""></button>
+    <button class="btn" (click)="searchText=''"><img src="./assets/img/search.png" ></button>
   </form>
 </div>
 
@@ -23,8 +23,8 @@
           <td>{{contact.email}}</td>
           <td>{{contact.type}}</td>
           <td>
-            <button class="btn btn-sm" (click)="contactsService.restoreContact(contact)"><img src="./assets/img/restore.png" alt=""></button>
-            <button class="btn btn-sm" (click)="onDelete(contact.$key)"><img src="./assets/img/delete.png" alt=""></button>
+            <button class="btn btn-sm" (click)="contactsService.restoreContact(contact)"><img src="./assets/img/restore.png" alt="" title="restore"></button>
+            <button class="btn btn-sm" (click)="onDelete(contact.$key)"><img src="./assets/img/delete.png" alt="" title="delete"></button>
           </td>
         </tr>
       </ng-container>
