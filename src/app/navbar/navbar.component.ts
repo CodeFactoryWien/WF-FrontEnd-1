@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService  } from "../shared/login.service";
 
 @Component({
     selector: 'app-navbar',
@@ -7,20 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class NavbarComponent implements OnInit {
-          
-    constructor() {}
+        
+    constructor(private loginService: LoginService) {}
 
     ngOnInit() {
         if (localStorage.getItem("login") == "true") {
-            document.getElementById("log").innerHTML = `
-            <a id="login-button" routerLink="/" class="nav-link js-scroll-trigger" href="">Logout</a>`
-            document.getElementById("login-button").addEventListener("click", function() {
-                localStorage.setItem("login", "false");
-                localStorage.setItem("user", "none");
-                console.log("in");
-                document.getElementById("log").innerHTML = `<a id="login-button" routerLink="/login" 
-                                              class="nav-link js-scroll-trigger" href="">Login</a>  `
-            })
+            this.loginService.updateGreeting();
+            this.loginService.switchLogButtons(1);
         }
     }
- }
+
+    logout(){
+        this.loginService.userLogout();
+    }
+}
