@@ -17,21 +17,23 @@ export class LoginComponent implements OnInit {
   	];
     
 
-  	constructor(private loginService: LoginService) {}
+  	constructor(private loginService: LoginService) { }
     
   	ngOnInit() { }
   
     /* retrieves data from HTML form; calls login function if authentication is possible;
        shows error message if authentication fails */
 	onSubmit(e) {
-    	let userInput = (<HTMLInputElement>document.getElementById("user"));
-    	let passwordInput = (<HTMLInputElement>document.getElementById("pass"));
+        let userInput = $("#user").val();
+        let passwordInput = $("#pass").val();
+
     	for (let user of this.users) {
-        	if (userInput.value == user.key && passwordInput.value == user.value) {
-            	this.loginService.userLogin(user);       
+        	if (userInput == user.key && passwordInput == user.value) {
+            	this.loginService.userLogin(user);
+                break;       
         	}
         	else {
-            	document.getElementById("message").innerText = "Wrong password or username";
+                $("#message").html("Wrong password or username");
         	}
     	}
   	}

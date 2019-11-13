@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
     ngOnInit() {
         if (localStorage.getItem("login") == "true") {
             this.loginService.updateGreeting();
-            this.loginService.switchLogButtons(1);
+            this.loginService.switchLogButtons();
         }
     }
 
