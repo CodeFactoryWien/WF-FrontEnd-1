@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService  } from "../shared/login.service";
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.scss']
 })
 
 export class LoginComponent implements OnInit {
@@ -19,12 +19,11 @@ export class LoginComponent implements OnInit {
 
   	constructor(private loginService: LoginService) {}
     
-  	ngOnInit() {
-  	}
+  	ngOnInit() { }
   
+    /* retrieves data from HTML form; calls login function if authentication is possible;
+       shows error message if authentication fails */
 	onSubmit(e) {
-    /* This sets the login status to true in case the user name and password match and console logs the login message
-    or the wrong password message*/
     	let userInput = (<HTMLInputElement>document.getElementById("user"));
     	let passwordInput = (<HTMLInputElement>document.getElementById("pass"));
     	for (let user of this.users) {

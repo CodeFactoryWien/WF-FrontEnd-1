@@ -12,30 +12,28 @@ export class ContactsComponent implements OnInit {
 
   	submitted: boolean;
   	formControls = this.contactsService.form.controls;
-	  showSuccessMessage: boolean;
+	showSuccessMessage: boolean;
 
-	  ngOnInit() {
-  	}
+	ngOnInit() { }
 
-    // adds/updates database entries and shows success message (no actual check)
+    // adds/updates database entries and shows success message (no actual check done)
   	onSubmit(){
   	    this.submitted = true;
-  		  if(this.contactsService.form.valid){
-            // adds a new entry in the database if record doesn't exit yet
-  			    if(this.contactsService.form.get("$key").value == null ){
+  		if(this.contactsService.form.valid){
+        // adds a new entry in the database, if no record exits yet
+  		    if(this.contactsService.form.get("$key").value == null ){
                 this.contactsService.insertContact(this.contactsService.form.value);
                 this.showSuccessMessage =true;
                 setTimeout(()=> this.showSuccessMessage=false,3000);
-         		  	this.submitted = false;
-         			  this.contactsService.form.reset();
-          	} else { // updates a database record if it already exists
+         		this.submitted = false;
+         		this.contactsService.form.reset();
+          	} else { // updates a database record, if it already exists
                	this.contactsService.updateCustomer(this.contactsService.form.value);
-        			  this.showSuccessMessage = true;
-       			    setTimeout(()=> this.showSuccessMessage=false ,3000);
-       			    this.submitted = false;
-        			  this.contactsService.form.reset();
+        	    this.showSuccessMessage = true;
+       			setTimeout(()=> this.showSuccessMessage=false ,3000);
+       			this.submitted = false;
+        		this.contactsService.form.reset();
           	}
-  		  }
+  		}
    	}
-
 }

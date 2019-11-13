@@ -11,6 +11,7 @@ export class NavbarComponent implements OnInit {
         
     constructor(private loginService: LoginService) {}
 
+    // safeguard in case user didn't logout before leaving the website
     ngOnInit() {
         if (localStorage.getItem("login") == "true") {
             this.loginService.updateGreeting();
@@ -18,6 +19,7 @@ export class NavbarComponent implements OnInit {
         }
     }
 
+    // calls logout service
     logout(){
         this.loginService.userLogout();
     }

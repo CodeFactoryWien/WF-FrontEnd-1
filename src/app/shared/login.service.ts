@@ -14,6 +14,7 @@ export class LoginService {
 
 	constructor(private router: Router) { }
 
+    // logs the user in, calls functions to update navbar and redirects user to contacts page
 	userLogin(user){
     	localStorage.setItem("login", "true"); 
         localStorage.setItem("user", user.key);
@@ -22,6 +23,7 @@ export class LoginService {
         this.updateGreeting();
     }
 
+    // logs the user out, calls functions to update navbar and redirects user to landing page
     userLogout(){
     	localStorage.removeItem("login");
     	localStorage.removeItem("user");
@@ -30,6 +32,7 @@ export class LoginService {
     	this.router.navigate(['']);
     }
 
+    // changes greeting based on login status / username
     updateGreeting(){
         let username = localStorage.getItem("user");
         if(username != null){
@@ -40,6 +43,7 @@ export class LoginService {
         }
     }
 
+    // shows login button on logout and logout buttton upon login
     switchLogButtons(currentState:loginState){
     	switch (currentState) {
     		case 1:
