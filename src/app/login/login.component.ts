@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
     	{key: 'Ece', value: 'boss'},
 	  ]; 
 
-  	constructor(private loginService: LoginService) { }
+  	constructor(public loginService: LoginService) { }
     
   	ngOnInit() { }
   
