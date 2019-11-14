@@ -13,7 +13,7 @@ export class ContactsListComponent implements OnInit {
     showArchivedMessage : boolean;
     searchText:string = "";
 
-	constructor(private contactsService: ContactsService) { }
+	constructor(public contactsService: ContactsService) { }
 
     // keeps the contact list updated
 	ngOnInit() {
