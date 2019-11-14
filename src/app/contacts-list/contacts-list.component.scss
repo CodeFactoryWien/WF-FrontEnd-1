@@ -7,6 +7,11 @@ td button{
 	background-color:#d0d5db;
 }
 
+#tool-buttons{
+	display: flex;
+	flex-wrap: nowrap;
+}
+
 #add-button{
 	margin-top: 6px;
 	background-color:#d0d5db;
@@ -14,3 +19,7 @@ td button{
 	border: none;
 }
 
+@media only screen and (max-width: 720px){
+	#tool-buttons{
+	display: none;}
+}

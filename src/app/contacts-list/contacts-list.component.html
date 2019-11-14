@@ -25,7 +25,7 @@
       <td>{{contact.phoneNumber}}</td>
       <td>{{contact.email}}</td>
       <td>{{contact.type}}</td>
-      <td>
+      <td id="tool-buttons" >
         <button class="btn btn-sm" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" (click)="contactsService.populateForm(contact)"><img src="./assets/img/edit.png" alt="Edit" title="edit"></button>
         <button class="btn btn-sm" (click)="onArchive(contact)"><img src="./assets/img/archive.png" alt="" title="archive"></button>
         <button class="btn btn-sm" (click)="onDelete(contact.$key)"><img src="./assets/img/delete.png" alt="" title="delete"></button>

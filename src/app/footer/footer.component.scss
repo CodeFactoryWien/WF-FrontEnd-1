@@ -1,6 +1,6 @@
 footer {
     display: flex;
-    height: 4em;
+    height: 5.5em;
     width: 100%;
     background-color: rgba(152, 204, 211, 0.9);
     color: black;
@@ -8,16 +8,26 @@ footer {
     color:#132238;
 
     #credits {
-        padding: 1em;
+        text-align: center;
+        padding: 0.5em 1em;
         font-style: italic;
-        font-size: 1.2em;
+        font-size: 1.4em;
     }
 
     #cf {
         padding-right:1em;
         margin-top:0.2em;
         font-weight: bold;
-        font-size: 2em;
+        font-size: 1.5em;
+    }
+
+    img {
+        width: 40px;
+
+    }
+    p{
+        font-size: 0.65em;
+        font-weight: 500;
 
     }
 }
