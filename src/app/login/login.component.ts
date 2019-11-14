@@ -14,9 +14,7 @@ export class LoginComponent implements OnInit {
     	{key: 'Sandra', value: 'password'},
     	{key: 'Tamas', value: 'wordpass'},
     	{key: 'Ece', value: 'boss'},
-	  ];
-	matchFound : Boolean;
-    
+	  ]; 
 
   	constructor(private loginService: LoginService) { }
     
@@ -27,16 +25,16 @@ export class LoginComponent implements OnInit {
 	onSubmit(e) {
         let userInput = $("#user").val();
         let passwordInput = $("#pass").val();
+        let matchFound:Boolean = false;
 
     	for (let user of this.users) {
-			this.matchFound = false;
         	if (userInput == user.key && passwordInput == user.value) {
 				this.loginService.userLogin(user);
-				this.matchFound = true;
+				matchFound = true;
                 break;   
 			}			        	     	
 		}
-		if (this.matchFound == false) {
+		if (matchFound == false) {
 			$("#message").html("Wrong password or username");
 		}
   	}
