@@ -11,7 +11,7 @@ export class LandingComponent implements OnInit {
 	showDeletedMessage : boolean;
     searchText:string = "";
 
-    constructor(private contactsService: ContactsService) { }
+    constructor(public contactsService: ContactsService) { }
 
     // keeps the list updated
 	ngOnInit() {
@@ -26,11 +26,4 @@ export class LandingComponent implements OnInit {
             }
         );
   	}
-
-  	// search function for name (both first and last name) and type
-    filterCondition(contact){
-        return (contact.firstName.toLowerCase().indexOf(this.searchText.toLowerCase()) 
-             && contact.lastName.toLowerCase().indexOf(this.searchText.toLowerCase()) 
-             && contact.type.toLowerCase().indexOf(this.searchText.toLowerCase())) != -1 ;
-    }
 }
