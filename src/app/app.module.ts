@@ -14,6 +14,7 @@ import { ContactsService } from "./shared/contacts.service";
 import { FooterComponent } from './footer/footer.component';
 import { LandingComponent } from './landing/landing.component';
 import { ArchiveComponent } from './archive/archive.component';
+import { LoginService } from "./shared/login.service";
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { ArchiveComponent } from './archive/archive.component';
     ],
     providers: [
         ContactsService,
+        LoginService,
         { provide: 'CanAlwaysActivateGuard',
             useValue: () => {
                 if(localStorage.getItem("login") == "true"){
