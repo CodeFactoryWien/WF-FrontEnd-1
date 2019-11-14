@@ -7,7 +7,7 @@ import { AngularFireDatabase, AngularFireList } from "angularfire2/database";
 })
 export class ContactsService {
 
-	constructor(private firebase: AngularFireDatabase) { }
+	constructor(public firebase: AngularFireDatabase) { }
 	
     contactsList: AngularFireList<any>;
 

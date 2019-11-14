@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 
 export class LoginService {
 
-	constructor(private router: Router) { }
+	constructor(public router: Router) { }
 
     // logs the user in, calls functions to update navbar and redirects user to contacts page
 	userLogin(user){

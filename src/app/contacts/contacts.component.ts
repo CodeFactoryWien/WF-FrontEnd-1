@@ -8,7 +8,7 @@ import { ContactsService  } from "../shared/contacts.service";
 })
 export class ContactsComponent implements OnInit {
 
-  	constructor(private contactsService: ContactsService) { }
+  	constructor(public contactsService: ContactsService) { }
 
   	submitted: boolean;
   	formControls = this.contactsService.form.controls;

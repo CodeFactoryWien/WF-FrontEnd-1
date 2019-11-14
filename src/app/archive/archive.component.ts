@@ -11,7 +11,7 @@ export class ArchiveComponent implements OnInit {
 	showDeletedMessage : boolean;
     searchText:string = "";
 
-    constructor(private contactsService: ContactsService) { }
+    constructor(public contactsService: ContactsService) { }
 
     // keeps the list updated
 	ngOnInit() {
