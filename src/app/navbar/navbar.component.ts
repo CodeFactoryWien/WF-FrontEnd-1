@@ -9,7 +9,7 @@ import { LoginService  } from "../shared/login.service";
 
 export class NavbarComponent implements OnInit {
         
-    constructor(private loginService: LoginService) {}
+    constructor(public loginService: LoginService) {}
 
     // safeguard in case user didn't logout before leaving the website
     ngOnInit() {
