@@ -7,10 +7,9 @@
           <th>Phone Number</th>
           <th>Email</th>
           <th>Type</th>
-          <th></th>
         </thead>
         <ng-container *ngFor="let contact of contactsArray">
-          <tr *ngIf="filterCondition(contact)">
+          <tr>
             <td>{{contact.firstName}}</td>
             <td>{{contact.lastName}}</td>
             <td>{{contact.phoneNumber}}</td>
