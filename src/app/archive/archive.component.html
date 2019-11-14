@@ -1,35 +1,30 @@
-
- <div class="row table mx-auto table-xs col-lg-8 col-md-10 col-sm-12">
+<div class="row table mx-auto table-xs col-lg-8 col-md-10 col-sm-12">
   <form class="form-inline col">
     <input name="searchInput" class="form-control" placeholder="Search by name or type of contact" #searchInput="ngModel" [(ngModel)]="searchText" style="width: 80%;">
-    <button class="btn" (click)="searchText=''"><img src="./assets/img/search.png" ></button>
+    <button class="btn" (click)="searchText=''"><img src="./assets/img/search.png"></button>
   </form>
 </div>
-
-    <table class="table mx-auto table-xs col-lg-8  col-md-10  col-sm-12">
-      <thead>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Phone Number</th>
-        <th>Email</th>
-        <th>Type</th>
-        <th></th>
-      </thead>
-      <ng-container *ngFor="let contact of contactsArray">
-        <tr *ngIf="filterCondition(contact) && contact.archive==true">
-          <td>{{contact.firstName}}</td>
-          <td>{{contact.lastName}}</td>
-          <td>{{contact.phoneNumber}}</td>
-          <td>{{contact.email}}</td>
-          <td>{{contact.type}}</td>
-          <td>
-            <button class="btn btn-sm" (click)="contactsService.restoreContact(contact)"><img src="./assets/img/restore.png" alt="" title="restore"></button>
-            <button class="btn btn-sm" (click)="onDelete(contact.$key)"><img src="./assets/img/delete.png" alt="" title="delete"></button>
-          </td>
-        </tr>
-      </ng-container>
-       <div class="alert alert-danger" *ngIf="showDeletedMessage">Deleted successfully</div>
-    </table>
-
-   
-
+<table class="table mx-auto table-xs col-lg-8  col-md-10  col-sm-12">
+  <thead>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Phone Number</th>
+    <th>Email</th>
+    <th>Type</th>
+    <th></th>
+  </thead>
+  <ng-container *ngFor="let contact of contactsArray">
+    <tr *ngIf="filterCondition(contact) && contact.archive==true">
+      <td>{{contact.firstName}}</td>
+      <td>{{contact.lastName}}</td>
+      <td>{{contact.phoneNumber}}</td>
+      <td>{{contact.email}}</td>
+      <td>{{contact.type}}</td>
+      <td id="tool-buttons">
+        <button class="btn btn-sm" (click)="contactsService.restoreContact(contact)"><img src="./assets/img/restore.png" alt="" title="restore"></button>
+        <button class="btn btn-sm" (click)="onDelete(contact.$key)"><img src="./assets/img/delete.png" alt="" title="delete"></button>
+      </td>
+    </tr>
+  </ng-container>
+  <div class="alert alert-danger" *ngIf="showDeletedMessage">Deleted successfully</div>
+</table>
