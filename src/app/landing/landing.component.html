@@ -9,7 +9,7 @@
           <th>Type</th>
         </thead>
         <ng-container *ngFor="let contact of contactsArray">
-          <tr>
+          <tr *ngIf="contact.archive==false">
             <td>{{contact.firstName}}</td>
             <td>{{contact.lastName}}</td>
             <td>{{contact.phoneNumber}}</td>
